@@ -1,3 +1,4 @@
+
 name: Build Todus Downloader
 
 on:
@@ -13,17 +14,21 @@ jobs:
       - name: Descargar proyecto
         uses: actions/checkout@v4
 
+      - name: Extraer carpetas
+        run: |
+          unzip -o app.zip -d .
+          unzip -o gradle.zip -d .
+
       - name: Instalar Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Instalar Gradle
-        uses: gradle/actions/setup-gradle@v4
-
       - name: Compilar APK
-        run: gradle assembleDebug
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Guardar APK
         uses: actions/upload-artifact@v4
