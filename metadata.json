@@ -1,0 +1,6 @@
+{
+  "name": "Todus Downloader",
+  "description": "Gestor de descargas y reproductor de vídeo nativo especializado en enlaces directos MP4 de Todus con streaming y descargas simultáneas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
